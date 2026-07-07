@@ -68,25 +68,46 @@ Ainda pendentes:
 
 Conteúdo estudado até o momento:
 
+### Fundamentos
+
 - Objetos
 - Arrays
-- Métodos de arrays
+- Propriedades
+- Callbacks
+- Encadeamento de métodos
+
+### Métodos de consulta
+
 - filter()
 - map()
-- join()
 - find()
+- join()
 - length
+
+### Métodos que modificam arrays
+
 - push()
 - pop()
 - shift()
 - unshift()
-- splice() (em andamento)
+- splice()
+
+### Conteúdo concluído
+
+O método splice() foi estudado completamente, incluindo:
+
+- Remoção de elementos
+- Inserção de elementos
+- Substituição de elementos
+- Remoção de múltiplos elementos
+- Funcionamento dos parâmetros
+- Interpretação passo a passo da execução pelo computador
 
 ---
 
 ## Próximo Conteúdo
 
-Finalizar o estudo completo do método splice() e continuar a sequência de métodos de arrays.
+Continuar o estudo dos métodos de arrays antes de iniciar Node.js.
 
 ---
 
