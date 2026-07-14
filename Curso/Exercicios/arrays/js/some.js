@@ -17,10 +17,17 @@ const tarefas = [
     concluida: false,
     prioridade: "Alta",
   },
+
+  {
+    id: 4,
+    titulo: "Estudar Docker",
+    concluida: true,
+    prioridade: "Baixa",
+  },
 ];
 
-const existeTarefaConcluidaAlta = tarefas.some(
-  (tarefa) => tarefa.concluida && tarefa.prioridade === "Alta",
+const existeTarefaAltaPendente = tarefas.some(
+  (tarefa) => !tarefa.concluida && tarefa.prioridade === "Alta",
 );
 
-console.log(existeTarefaConcluidaAlta);
+console.log(existeTarefaAltaPendente);
