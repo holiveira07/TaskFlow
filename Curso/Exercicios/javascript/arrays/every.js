@@ -95,4 +95,59 @@ const backendPrioridadeAlta = tarefas3
   )
   .every((tarefa) => tarefa.concluida);
 
-console.log(backendPrioridadeAlta); // false
+// console.log(backendPrioridadeAlta); // false
+
+const tarefas4 = [
+  {
+    id: 1,
+    titulo: "Implemantar login",
+    prioridade: "Alta",
+    concluida: true,
+    diasDeAtraso: 0,
+  },
+  {
+    id: 2,
+    titulo: "Criar API",
+    prioridade: "Alta",
+    concluida: true,
+    diasDeAtraso: 2,
+  },
+  {
+    id: 3,
+    titulo: "Corrigir Dashboard",
+    prioridade: "Alta",
+    concluida: true,
+    diasDeAtraso: 5,
+  },
+
+  {
+    id: 4,
+    titulo: "Atualizar Documentação",
+    prioridade: "Baixa",
+    concluida: false,
+    diasDeAtraso: 10,
+  },
+];
+
+const tarefasPrioridadeAlta = tarefas4.filter(
+  (tarefa) => tarefa.prioridade === "Alta",
+);
+
+const todasPrioridadeAltaValidas = tarefasPrioridadeAlta.every(
+  (tarefa) => tarefa.concluida && tarefa.diasDeAtraso <= 3,
+);
+
+console.log(todasPrioridadeAltaValidas); // false
+
+console.log(tarefasPrioridadeAlta);
+
+const todasPrioridadeAltaNaoConcluida = tarefasPrioridadeAlta.every(
+  (tarefa) => !tarefa.concluida,
+);
+
+const existeAlgumaTarefaAltaAtrasada2 = tarefasPrioridadeAlta.some(
+  (tarefa) => tarefa.diasDeAtraso > 3,
+);
+
+console.log(todasPrioridadeAltaNaoConcluida); // false
+console.log(existeAlgumaTarefaAltaAtrasada2); // true
