@@ -76,3 +76,25 @@ O objetivo é criar soluções:
 - fáceis de manter;
 - alinhadas às regras do sistema.
 ```
+
+## 24/07/2026
+
+## Evolução do raciocínio de desenvolvimento
+
+Nesta etapa, continuei praticando JavaScript utilizando métodos de arrays em situações inspiradas em regras de negócio do TaskFlow.
+
+O estudo reforçou a diferença entre `some()` e `every()` e mostrou como utilizar um array previamente filtrado para realizar diferentes análises sobre o mesmo conjunto de dados.
+
+Também pratiquei condições compostas com operadores lógicos e desenvolvi maior atenção ao comportamento dos métodos durante a execução, especialmente ao fato de que `some()` e `every()` podem interromper a iteração assim que o resultado já pode ser determinado.
+
+Um ponto importante aprendido foi analisar o estado dos dados após cada operação. Depois que um array é filtrado, o resultado pode ser armazenado em uma variável e reutilizado em outras operações, evitando repetir uma filtragem que já foi realizada.
+
+A prática também reforçou uma habilidade importante para o desenvolvimento de software: traduzir perguntas de negócio em operações lógicas.
+
+Exemplos:
+
+- "Existe alguma tarefa que atende à condição?" → `some()`
+- "Todas as tarefas atendem à condição?" → `every()`
+- "Quais tarefas atendem à condição?" → `filter()`
+
+O aprendizado continua avançando da compreensão isolada da sintaxe para a construção de soluções baseadas em regras de negócio.

@@ -106,3 +106,25 @@ interpretar regras de negócio;
 escolher métodos adequados;
 combinar operações;
 ```
+
+## 24/07/2026
+
+## Estudo de JavaScript — Consolidação de some() e every()
+
+Foi realizada uma revisão prática dos métodos `some()` e `every()`, com foco na interpretação e implementação de regras de negócio.
+
+### some()
+
+O método `some()` é utilizado para responder perguntas do tipo:
+
+> "Existe pelo menos um elemento que atende à condição?"
+
+O método percorre o array e retorna `true` assim que encontra o primeiro elemento que atende à condição. Caso percorra todos os elementos sem encontrar nenhum que atenda à condição, retorna `false`.
+
+Exemplo trabalhado:
+
+```javascript
+const existeAlgumaTarefaAltaAtrasada = tarefasPrioridadeAlta.some(
+  (tarefa) => tarefa.diasDeAtraso > 3,
+);
+```
