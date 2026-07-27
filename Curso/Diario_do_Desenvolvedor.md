@@ -98,3 +98,87 @@ Exemplos:
 - "Quais tarefas atendem à condição?" → `filter()`
 
 O aprendizado continua avançando da compreensão isolada da sintaxe para a construção de soluções baseadas em regras de negócio.
+
+### 27/07/2026 `Diario_do_Desenvolvedor.md`
+
+```markdown
+## Registro de Evolução — JavaScript
+
+### Estudo realizado
+
+Continuidade dos estudos de JavaScript com foco em métodos de arrays e aplicação prática em regras de negócio relacionadas ao projeto TaskFlow.
+
+Nesta etapa, foi aprofundado o método `find()`.
+
+### Principais aprendizados
+
+Foi consolidado o entendimento de que o `find()` deve ser utilizado quando a aplicação precisa localizar um elemento específico.
+
+O método retorna o primeiro elemento que atende à condição definida no callback e interrompe a busca após encontrar esse elemento.
+
+Também foi compreendido que, quando nenhum elemento atende à condição, o retorno é `undefined`.
+
+Durante os exercícios, foram praticadas buscas utilizando:
+
+- `id`;
+- nome;
+- prioridade;
+- status de conclusão;
+- múltiplas condições combinadas com `&&`.
+
+### Aplicação prática
+
+Os exercícios foram relacionados ao contexto do TaskFlow, simulando situações como:
+
+- localizar uma tarefa pelo `id`;
+- verificar se uma tarefa foi encontrada;
+- verificar se uma tarefa está concluída;
+- localizar a primeira tarefa de alta prioridade ainda não concluída;
+- localizar usuários por nome;
+- tratar situações em que o elemento procurado não existe.
+
+### Evolução do raciocínio
+
+O estudo reforçou que a escolha de um método de array deve partir da regra de negócio e do resultado esperado.
+```
+
+## Foi consolidada a diferença entre:
+
+```text
+filter()
+→ retorna vários elementos.
+
+find()
+→ retorna o primeiro elemento encontrado.
+
+some()
+→ retorna true ou false para verificar se existe algum elemento.
+
+every()
+→ retorna true ou false para verificar se todos atendem à condição.
+
+Também foi reforçada a importância de diferenciar:
+
+localizar um objeto;
+verificar se o objeto existe;
+analisar as propriedades do objeto encontrado.
+Conceitos de JavaScript reforçados
+Callback.
+Retorno de métodos de array.
+find().
+undefined.
+Valores truthy e falsy.
+Operador lógico &&.
+Short-circuit.
+Condições compostas.
+Estruturas condicionais com if e else.
+
+```
+
+## Reflexão profissional
+
+O estudo mostrou que escrever código funcional não é suficiente. É necessário compreender o requisito e garantir que a implementação corresponda exatamente à regra de negócio.
+
+A prática com find() ajudou a desenvolver a capacidade de transformar uma necessidade do sistema em uma condição de busca precisa.
+
+O aprendizado continua seguindo a abordagem de compreender o problema, interpretar a regra de negócio, escolher a ferramenta adequada e então implementar a solução.
