@@ -182,3 +182,128 @@ O estudo mostrou que escrever código funcional não é suficiente. É necessár
 A prática com find() ajudou a desenvolver a capacidade de transformar uma necessidade do sistema em uma condição de busca precisa.
 
 O aprendizado continua seguindo a abordagem de compreender o problema, interpretar a regra de negócio, escolher a ferramenta adequada e então implementar a solução.
+
+## Registro de Evolução — JavaScript
+
+### Estudo de `includes()`
+
+Foi estudado o método `includes()` e sua aplicação em verificações simples de existência de valores dentro de arrays.
+
+Os exercícios foram relacionados a situações de regras de negócio, especialmente permissões e papéis de usuários.
+
+A prática reforçou uma habilidade importante: identificar o tipo de pergunta que o sistema precisa responder antes de escolher o método.
+
+Exemplo:
+
+```text
+"Esse usuário possui a permissão editar?"
+→ includes()
+```
+
+Isso complementa o raciocínio desenvolvido nos estudos anteriores:
+
+```text
+Existe algum elemento que atende?
+→ some()
+
+Todos atendem?
+→ every()
+
+Qual é o primeiro elemento?
+→ find()
+
+Quais elementos atendem?
+→ filter()
+
+Esse valor existe na coleção?
+→ includes()
+```
+
+### Evolução no estudo de `sort()`
+
+O estudo do `sort()` representou uma evolução na complexidade das regras implementadas.
+
+Inicialmente, a ordenação foi praticada com números. Depois, os exercícios passaram para objetos e, posteriormente, para regras de negócio mais próximas de um sistema real.
+
+Um ponto importante foi compreender que o computador não possui conhecimento sobre o significado de valores como:
+
+```text
+Alta
+Média
+Baixa
+```
+
+Foi necessário transformar essa regra em uma representação que pudesse ser processada pelo algoritmo:
+
+```javascript
+const ordemPrioridade = {
+  Alta: 1,
+  Média: 2,
+  Baixa: 3,
+};
+```
+
+Isso ajudou a reforçar um conceito importante de desenvolvimento:
+
+> Regras do mundo real precisam ser traduzidas para estruturas e operações que o computador consiga processar.
+
+### Raciocínio sobre o funcionamento do `sort()`
+
+Inicialmente houve dificuldade para compreender a comparação entre `a` e `b`.
+
+Foi esclarecido que `a` e `b` não representam elementos específicos escolhidos pelo programador. São os dois elementos que o algoritmo de ordenação está comparando naquele momento.
+
+A função de comparação funciona como uma regra geral que pode ser aplicada a diferentes pares de elementos.
+
+Esse entendimento foi importante para deixar de interpretar a função como uma comparação fixa entre valores específicos.
+
+### Múltiplos critérios
+
+Também foi praticada uma regra de negócio com dois critérios:
+
+1. ordenar pela prioridade;
+2. em caso de empate, ordenar pela quantidade de dias de atraso.
+
+Esse exercício exigiu a utilização de estruturas condicionais dentro da função de comparação.
+
+O aprendizado mostrou que métodos de array podem representar regras de negócio progressivamente mais complexas e que a lógica deve ser construída de acordo com o requisito.
+
+### Mutabilidade e imutabilidade
+
+Outro aprendizado importante foi perceber que `sort()` modifica o array original.
+
+Foi então praticada a utilização do spread operator:
+
+```javascript
+[...array].sort(...)
+```
+
+para criar uma cópia antes da ordenação.
+
+Essa diferença foi registrada como um conceito importante para etapas futuras do curso, especialmente quando forem estudados frameworks e gerenciamento de estado.
+
+### Reflexão profissional
+
+Os exercícios de `includes()` e `sort()` reforçaram que aprender programação não significa apenas memorizar métodos.
+
+O objetivo é compreender:
+
+```text
+Problema
+↓
+Regra de negócio
+↓
+Estrutura dos dados
+↓
+Operação necessária
+↓
+Implementação
+↓
+Validação do resultado
+```
+
+O estudo também mostrou que uma solução pode exigir estruturas auxiliares para representar regras que existem no domínio do sistema.
+
+Essa forma de raciocínio será importante quando o curso avançar para backend, banco de dados, APIs e arquitetura do TaskFlow.
+
+A evolução continua sendo direcionada para a capacidade de construir sistemas reais, e não apenas para a resolução isolada de exercícios de JavaScript.

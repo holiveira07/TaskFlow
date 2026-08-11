@@ -413,3 +413,237 @@ every()
 
 O método find() foi consolidado como ferramenta para localizar um elemento específico dentro de uma coleção, retornando o primeiro resultado compatível com a regra definida.
 ```
+
+## Data: 10/08/2026
+
+# Estudo de JavaScript — Método `includes()`
+
+### Conteúdo estudado
+
+Foi estudado o método `includes()` do JavaScript, utilizado para verificar se determinado valor existe dentro de um array.
+
+O método retorna um valor booleano:
+
+- `true` → quando o valor existe;
+- `false` → quando o valor não existe.
+
+Exemplo:
+
+```javascript
+const permissoesUsuario = ["visualizar", "criar", "editar"];
+
+const usuarioTemPermissaoParaEditar = permissoesUsuario.includes("editar");
+
+console.log(usuarioTemPermissaoParaEditar);
+```
+
+Resultado:
+
+```text
+true
+```
+
+Também foi praticado o cenário em que o valor não existe:
+
+```javascript
+const usuarioTemPermissaoParaExcluir = permissoesUsuario.includes("excluir");
+
+console.log(usuarioTemPermissaoParaExcluir);
+```
+
+Resultado:
+
+```text
+false
+```
+
+### Aplicação em regras de negócio
+
+O `includes()` foi relacionado ao controle de permissões e validações do TaskFlow.
+
+Exemplo:
+
+```javascript
+const papelUsuario = ["editor", "membro"];
+
+const usuarioEhAdministrador = "administrador";
+
+const usuarioTemPapelDeAdministrador = papelUsuario.includes(
+  usuarioEhAdministrador,
+);
+
+console.log(usuarioTemPapelDeAdministrador);
+```
+
+Nesse caso, o sistema verifica se o usuário possui determinado papel.
+
+Também foi praticada a utilização de `toLowerCase()` antes da verificação, reforçando a importância de normalizar dados antes de realizar determinadas comparações.
+
+### Conceito consolidado
+
+O `includes()` deve ser utilizado quando a pergunta da regra de negócio for semelhante a:
+
+> "Esse valor existe dentro desta coleção?"
+
+Comparação com os métodos estudados:
+
+```text
+includes()
+→ determinado valor existe?
+
+some()
+→ existe algum elemento que atende a uma condição?
+
+every()
+→ todos os elementos atendem à condição?
+
+find()
+→ qual é o primeiro elemento que atende à condição?
+
+filter()
+→ quais elementos atendem à condição?
+```
+
+---
+
+## Data: 11/08/2026
+
+# Estudo de JavaScript — Método `sort()`
+
+### Conteúdo estudado
+
+Foi iniciado o estudo do método `sort()` do JavaScript, utilizado para ordenar elementos de um array.
+
+Foi praticada a utilização de uma função de comparação para realizar ordenações numéricas.
+
+Exemplo:
+
+```javascript
+const numeros = [5, 2, 8, 1];
+
+numeros.sort((a, b) => a - b);
+```
+
+Resultado:
+
+```text
+[1, 2, 5, 8]
+```
+
+### Ordenação de objetos
+
+Foi praticada a ordenação de objetos utilizando uma propriedade numérica.
+
+Exemplo:
+
+```javascript
+tarefas.sort((a, b) => a.prioridade - b.prioridade);
+```
+
+Nesse caso, a propriedade `prioridade` é utilizada como critério de comparação.
+
+### Regras de negócio com `sort()`
+
+Foi estudada uma situação mais próxima de um sistema real, na qual as prioridades são representadas por textos:
+
+```javascript
+const ordemPrioridade = {
+  Alta: 1,
+  Média: 2,
+  Baixa: 3,
+};
+```
+
+Esse objeto funciona como uma estrutura auxiliar para transformar valores textuais em valores numéricos que podem ser comparados pelo `sort()`.
+
+A comparação:
+
+```javascript
+ordemPrioridade[a.prioridade] - ordemPrioridade[b.prioridade];
+```
+
+permite ordenar as tarefas de acordo com a regra:
+
+```text
+Alta → Média → Baixa
+```
+
+Foi reforçado que `a` e `b` representam dois elementos que o algoritmo de ordenação escolhe para comparar. A função de comparação fornece ao `sort()` a regra utilizada para determinar qual elemento deve aparecer primeiro.
+
+### Múltiplos critérios
+
+Também foi praticada uma ordenação com mais de um critério.
+
+Regra:
+
+1. maior prioridade primeiro;
+2. em caso de mesma prioridade, maior quantidade de dias de atraso primeiro.
+
+Exemplo:
+
+```javascript
+tarefas.sort((a, b) => {
+  if (ordemPrioridade[a.prioridade] !== ordemPrioridade[b.prioridade]) {
+    return ordemPrioridade[a.prioridade] - ordemPrioridade[b.prioridade];
+  }
+
+  return b.diasAtraso - a.diasAtraso;
+});
+```
+
+O exercício reforçou que uma função de comparação pode representar regras de negócio compostas.
+
+### Mutação do array original
+
+Foi identificado um comportamento importante do `sort()`:
+
+> O método modifica o array original.
+
+Exemplo:
+
+```javascript
+const numeros = [5, 2, 8, 1];
+
+const numerosOrdenados = numeros.sort((a, b) => a - b);
+```
+
+Nesse caso, tanto `numeros` quanto `numerosOrdenados` apontam para o array já ordenado.
+
+### Ordenação sem modificar o array original
+
+Foi praticado o uso do spread operator para criar uma cópia antes da ordenação:
+
+```javascript
+const numerosOrdenados = [...numeros].sort((a, b) => a - b);
+```
+
+Nesse caso, o array original permanece inalterado e a ordenação é aplicada à cópia.
+
+### Conceitos consolidados
+
+- Função de comparação do `sort()`.
+- Ordenação crescente.
+- Ordenação de objetos.
+- Acesso a propriedades de objetos.
+- Acesso dinâmico utilizando colchetes.
+- Uso de objetos auxiliares para representar regras de negócio.
+- Ordenação por múltiplos critérios.
+- Mutabilidade do `sort()`.
+- Criação de cópia com spread operator antes da ordenação.
+
+### Aplicação no TaskFlow
+
+O `sort()` foi relacionado à necessidade de organizar tarefas por critérios relevantes para o sistema, como:
+
+- prioridade;
+- atraso;
+- futuramente, datas;
+- status;
+- outros critérios definidos pelas regras de negócio.
+
+O estudo reforçou que a ordenação não deve ser tratada apenas como uma operação técnica, mas como uma implementação de uma regra definida pelo sistema.
+
+### Próximo conteúdo
+
+- Consolidar o método `sort()`.
+- Estudar o método `reverse()`.
