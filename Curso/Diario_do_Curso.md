@@ -647,3 +647,203 @@ O estudo reforçou que a ordenação não deve ser tratada apenas como uma opera
 
 - Consolidar o método `sort()`.
 - Estudar o método `reverse()`.
+
+## Data: 26/08/2026
+
+# Estudo de JavaScript — Método `reduce()`
+
+### Conteúdo estudado
+
+Foi iniciado o estudo do método `reduce()` do JavaScript, com foco na compreensão do acumulador, do elemento atual e do valor inicial.
+
+Foi reforçado que o `reduce()` percorre os elementos do array em sequência, executando o callback uma vez para cada elemento e utilizando o resultado de uma rodada como acumulador da rodada seguinte.
+
+### Conceito principal
+
+O método `reduce()` permite transformar uma coleção de elementos em um único resultado acumulado.
+
+O acumulador não precisa ser necessariamente um número. Ele pode ser:
+
+- um número;
+- um array;
+- um objeto;
+- outra estrutura utilizada para construir o resultado desejado.
+
+### Acumulador e elemento atual
+
+Foi estudada a diferença entre os parâmetros do callback:
+
+```javascript
+(acumulador, elemento)
+
+O acumulador representa o resultado construído até aquele momento.
+
+O segundo parâmetro representa o elemento atual do array.
+
+Foi utilizado o exemplo de soma:
+
+const numeros = [5, 10, 15];
+
+const soma = numeros.reduce((acumulador, numero) => {
+  return acumulador + numero;
+}, 0);
+
+Funcionamento:
+
+0 + 5 = 5
+5 + 10 = 15
+15 + 15 = 30
+
+Foi reforçado que o resultado de cada rodada passa a ser o acumulador da rodada seguinte.
+
+Reduce com objetos
+
+Foi praticado o acesso às propriedades do objeto atual durante a acumulação.
+
+ Exemplo:
+
+const tarefas = [
+  { titulo: "API", horas: 3 },
+  { titulo: "Login", horas: 5 },
+  { titulo: "Dashboard", horas: 2 },
+];
+
+const soma = tarefas.reduce((acumulador, tarefa) => {
+  return acumulador + tarefa.horas;
+}, 0);
+
+Nesse caso, o reduce() soma a propriedade horas de cada tarefa.
+
+Combinação de métodos
+
+Foi praticada a combinação de filter() e reduce() para implementar uma regra de negócio.
+
+Exemplo:
+
+Calcular o total de horas das tarefas de prioridade Alta.
+
+Foi utilizado:
+
+filter()
+→ seleciona as tarefas relevantes.
+
+reduce()
+→ acumula as horas das tarefas selecionadas.
+
+Também foi praticado o encadeamento dos métodos.
+
+Reduce como contador
+
+Foi estudado o uso de um acumulador numérico para contar ocorrências.
+
+Exemplo:
+
+const tarefasConcluidas = tarefas.reduce((contador, tarefa) => {
+  if (tarefa.status === "concluida") {
+    return contador + 1;
+  }
+
+  return contador;
+}, 0);
+
+Nesse caso, cada tarefa concluída acrescenta 1 ao contador.
+
+Reduce construindo arrays
+
+Foi praticado o uso de um array como acumulador.
+
+Exemplo:
+
+const tarefasConcluidas = tarefas.reduce((acumulador, tarefa) => {
+  if (tarefa.status === "concluida") {
+    acumulador.push(tarefa.titulo);
+  }
+
+  return acumulador;
+}, []);
+
+
+Foi reforçado que o acumulador pode ser uma estrutura diferente de um número.
+
+Reduce construindo objetos
+
+Foi estudada a utilização de um objeto vazio como acumulador para agrupar dados por uma propriedade.
+
+Exemplo:
+
+const agruparTarefasPrioridade = tarefas.reduce((acumulador, tarefa) => {
+  if (!acumulador[tarefa.prioridade]) {
+    acumulador[tarefa.prioridade] = [];
+  }
+
+  acumulador[tarefa.prioridade].push(tarefa.titulo);
+
+  return acumulador;
+}, {});
+
+Resultado:
+
+{
+  Alta: ["API", "Login", "Testes"],
+  Média: ["Dashboard"],
+  Baixa: ["Documentação"]
+}
+
+Foi explicado que:
+
+acumulador[tarefa.prioridade]
+
+acessa dinamicamente a propriedade correspondente à prioridade da tarefa atual.
+
+Assim, valores como "Alta", "Média" e "Baixa" determinam dinamicamente em qual grupo a informação será armazenada.
+
+Funcionamento por rodadas
+
+Foi consolidado que o reduce() não permanece processando um único objeto várias vezes.
+
+Ele percorre o array em sequência:
+
+elemento 1
+↓
+callback
+↓
+acumulador atualizado
+↓
+elemento 2
+↓
+callback
+↓
+acumulador atualizado
+↓
+próximo elemento
+
+O acumulador é carregado de uma rodada para a seguinte até chegar ao resultado final.
+
+Consolidação
+
+O estudo ampliou a compreensão dos métodos de array e reforçou a escolha de métodos de acordo com a pergunta da regra de negócio.
+
+Resumo:
+
+filter()
+→ selecionar elementos.
+
+map()
+→ transformar elementos.
+
+find()
+→ localizar o primeiro elemento.
+
+some()
+→ verificar se existe algum.
+
+every()
+→ verificar se todos atendem à condição.
+
+reduce()
+→ acumular, contar, agrupar ou construir um resultado.
+Próximo conteúdo
+Continuar a prática integrada dos métodos de arrays.
+Consolidar reduce() em situações diferentes.
+Prosseguir com o fluxo da Fase 1.
+```

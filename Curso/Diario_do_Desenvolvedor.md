@@ -307,3 +307,49 @@ O estudo também mostrou que uma solução pode exigir estruturas auxiliares par
 Essa forma de raciocínio será importante quando o curso avançar para backend, banco de dados, APIs e arquitetura do TaskFlow.
 
 A evolução continua sendo direcionada para a capacidade de construir sistemas reais, e não apenas para a resolução isolada de exercícios de JavaScript.
+
+## Data: 26/08/2026
+
+## Registro de Evolução — JavaScript
+
+### Estudo de `reduce()`
+
+Nesta etapa, avancei no estudo de JavaScript com foco no método `reduce()` e na construção de resultados a partir de coleções de dados.
+
+A principal dificuldade inicial foi compreender a relação entre o acumulador e o elemento atual. A prática mostrou que o acumulador recebe o resultado de cada rodada e esse resultado é utilizado na rodada seguinte.
+
+### Evolução do raciocínio
+
+O estudo não ficou limitado à soma de números.
+
+Foram praticadas diferentes formas de utilização do `reduce()`:
+
+- acumular valores numéricos;
+- contar ocorrências;
+- construir arrays;
+- construir objetos;
+- agrupar informações;
+- combinar `filter()` e `reduce()`.
+
+Isso ajudou a desenvolver uma visão mais ampla sobre o papel dos métodos de array.
+
+### Aplicação ao TaskFlow
+
+Os exercícios foram relacionados a situações que poderiam existir dentro do TaskFlow, como:
+
+- calcular horas de trabalho;
+- contar tarefas concluídas;
+- somar horas de tarefas de determinada prioridade;
+- agrupar tarefas por prioridade.
+
+### Aprendizado importante
+
+Foi reforçado que o acumulador não possui um tipo fixo.
+
+Dependendo do problema, ele pode começar como:
+
+```text
+0
+[]
+{}
+```
