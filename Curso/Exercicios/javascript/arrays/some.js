@@ -35,3 +35,18 @@ const existeTarefaAtrasadaNaoConcluidaPrioridadeAlta = tarefas.some(
 );
 
 console.log(existeTarefaAtrasadaNaoConcluidaPrioridadeAlta); // true
+
+const tarefas0 = [
+  { titulo: "API", prioridade: "Alta", status: "pendente", horas: 5 },
+  { titulo: "Login", prioridade: "Alta", status: "concluida", horas: 8 },
+  { titulo: "Dashboard", prioridade: "Média", status: "pendente", horas: 4 },
+  { titulo: "Documentação", prioridade: "Baixa", status: "pendente", horas: 2 },
+];
+
+function tarefasPendentesAltaPrioridade(tarefas) {
+  return tarefas.some(
+    (tarefa) => tarefa.status === "pendente" && tarefa.prioridade === "Alta",
+  );
+}
+
+console.log(tarefasPendentesAltaPrioridade(tarefas0));

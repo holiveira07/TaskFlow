@@ -847,3 +847,131 @@ Continuar a prática integrada dos métodos de arrays.
 Consolidar reduce() em situações diferentes.
 Prosseguir com o fluxo da Fase 1.
 ```
+
+## Data: 03/09/2026
+
+# Estudo de JavaScript — Funções e reutilização de métodos
+
+### Conteúdo estudado
+
+Foi iniciada a etapa de estudo de funções em JavaScript, com foco em parâmetros, argumentos, `return` e criação de funções reutilizáveis.
+
+Foi reforçada a diferença entre:
+
+- parâmetro → variável definida na declaração da função;
+- argumento → valor fornecido na chamada da função;
+- `return` → resultado devolvido pela função.
+
+### Funções com métodos de array
+
+Foi praticada a utilização de métodos de array dentro de funções, transformando operações que antes eram executadas diretamente em funções reutilizáveis.
+
+Exemplo:
+
+```javascript
+function obterTarefasPendentes(tarefas) {
+  return tarefas.filter(
+    (tarefa) => tarefa.status === "pendente",
+  );
+}
+```
+
+Nesse caso, a função recebe um array por meio do parâmetro `tarefas` e retorna somente as tarefas pendentes.
+
+### Combinação de `filter()` e `map()`
+
+Foi praticada a combinação de métodos para selecionar e transformar dados.
+
+Exemplo:
+
+```javascript
+function obterTitulosTarefasPendentes(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.status === "pendente")
+    .map((tarefa) => tarefa.titulo);
+}
+```
+
+O `filter()` seleciona os objetos relevantes e o `map()` transforma os objetos selecionados em seus respectivos títulos.
+
+### Condições compostas
+
+Foi praticada a utilização do operador `&&` dentro do `filter()` para representar regras que exigem mais de uma condição.
+
+Exemplo:
+
+```javascript
+function obterTitulosPorStatusEPrioridade(
+  tarefas,
+  status,
+  prioridade,
+) {
+  return tarefas
+    .filter(
+      (tarefa) =>
+        tarefa.status === status &&
+        tarefa.prioridade === prioridade,
+    )
+    .map((tarefa) => tarefa.titulo);
+}
+```
+
+A função passou a receber `status` e `prioridade` como parâmetros, tornando a regra reutilizável para diferentes combinações.
+
+### Funções com `reduce()`
+
+Foi praticada a utilização do `reduce()` dentro de funções reutilizáveis.
+
+Exemplo:
+
+```javascript
+function obterTotalHorasPorPrioridade(tarefas, prioridade) {
+  return tarefas.reduce((totalHoras, tarefa) => {
+    if (tarefa.prioridade === prioridade) {
+      return totalHoras + tarefa.horas;
+    }
+
+    return totalHoras;
+  }, 0);
+}
+```
+
+Nesse caso:
+
+- `totalHoras` representa o total acumulado;
+- `tarefa` representa o elemento atual;
+- `tarefa.horas` representa o valor acrescentado ao acumulador;
+- `0` é o valor inicial do acumulador.
+
+### Consolidação
+
+Foi reforçado que uma função pode encapsular uma regra de negócio e receber os valores que determinam seu comportamento por meio de parâmetros.
+
+O estudo avançou de operações isoladas com métodos de array para funções reutilizáveis que combinam:
+
+```text
+função
+↓
+parâmetros
+↓
+regra de negócio
+↓
+método de array
+↓
+resultado
+```
+
+### Aplicação no TaskFlow
+
+Os exercícios foram relacionados ao contexto de tarefas, utilizando regras como:
+
+- obter tarefas por status;
+- obter títulos de tarefas;
+- filtrar por status e prioridade;
+- calcular horas por prioridade.
+
+### Próximo conteúdo
+
+- Continuar a prática de funções reutilizáveis.
+- Integrar funções com `filter()`, `map()`, `reduce()` e outros métodos já estudados.
+- Começar a analisar o problema e escolher a operação adequada antes de implementar a função.

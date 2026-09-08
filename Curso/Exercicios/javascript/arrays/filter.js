@@ -11,3 +11,37 @@ console.log(`Total de tarefas concluidas: ${concluidas.length}`);
 
 const titulos = tarefas.map((tarefa) => tarefa.titulo);
 console.log(titulos);
+
+const tarefas0 = [
+  { titulo: "API", status: "pendente" },
+  { titulo: "Login", status: "concluida" },
+  { titulo: "Dashboard", status: "pendente" },
+];
+
+function titulosTarefasPendentes(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.status === "pendente")
+    .map((tarefa) => tarefa.titulo);
+}
+
+console.log(titulosTarefasPendentes(tarefas0)); // Saída: ["API", "Dashboard"]
+
+const tarefas1 = [
+  { titulo: "Criar API", status: "pendente", prioridade: "Alta" },
+  { titulo: "Criar Login", status: "concluida", prioridade: "Alta" },
+  { titulo: "Dashboard", status: "pendente", prioridade: "Baixa" },
+  { titulo: "Testes", status: "pendente", prioridade: "Alta" },
+];
+
+function obterTitulosPorStatusEPrioridade(tarefas, status, prioridade) {
+  return tarefas
+    .filter(
+      (tarefa) => tarefa.status === status && tarefa.prioridade === prioridade,
+    )
+    .map((tarefa) => tarefa.titulo);
+}
+
+console.log(obterTitulosPorStatusEPrioridade(tarefas1, "pendente", "Alta"));
+
+console.log(obterTitulosPorStatusEPrioridade(tarefas1, "concluida", "Alta"));
+console.log(obterTitulosPorStatusEPrioridade(tarefas1, "pendente", "Baixa"));

@@ -353,3 +353,186 @@ Dependendo do problema, ele pode começar como:
 []
 {}
 ```
+
+## Data: 03/09/2026
+
+## Registro de Evolução — JavaScript
+
+### Funções como unidades reutilizáveis
+
+Nesta etapa, comecei a trabalhar com funções de forma mais estruturada, deixando de utilizá-las apenas como blocos isolados e passando a utilizá-las para encapsular regras de negócio.
+
+Foi consolidada a diferença entre parâmetros e argumentos:
+
+```text
+parâmetro
+→ variável definida pela função.
+
+argumento
+→ valor enviado na chamada da função.
+```
+
+Também foi reforçado o papel do `return` como mecanismo para devolver o resultado produzido pela função.
+
+### Reutilização
+
+Um dos principais aprendizados foi perceber que parâmetros tornam uma função flexível.
+
+Em vez de criar uma função específica para contar apenas tarefas pendentes, foi criada uma função capaz de receber o status desejado:
+
+```javascript
+function contarTarefasPorStatus(tarefas, status) {
+  return tarefas.reduce((contador, tarefa) => {
+    if (tarefa.status === status) {
+      return contador + 1;
+    }
+
+    return contador;
+  }, 0);
+}
+```
+
+A mesma função pode ser utilizada para diferentes valores:
+
+```javascript
+contarTarefasPorStatus(tarefas, "pendente");
+contarTarefasPorStatus(tarefas, "concluida");
+```
+
+Isso reforçou a importância de evitar regras desnecessariamente fixas quando o comportamento pode ser parametrizado.
+
+### Combinação de métodos
+
+Foi praticada a utilização de funções que combinam métodos de array.
+
+Exemplo:
+
+```javascript
+function obterTitulosPorStatusEPrioridade(
+  tarefas,
+  status,
+  prioridade,
+) {
+  return tarefas
+    .filter(
+      (tarefa) =>
+        tarefa.status === status &&
+        tarefa.prioridade === prioridade,
+    )
+    .map((tarefa) => tarefa.titulo);
+}
+```
+
+O raciocínio utilizado foi:
+
+```text
+dados
+↓
+filter()
+↓
+seleção dos objetos relevantes
+↓
+map()
+↓
+transformação para o formato necessário
+```
+
+Esse exercício reforçou que a escolha dos métodos deve partir do resultado que a função precisa produzir.
+
+### `reduce()` dentro de funções
+
+Também foi praticado o uso do `reduce()` para criar funções que acumulam valores.
+
+Exemplo:
+
+```javascript
+function obterTotalHorasPorPrioridade(tarefas, prioridade) {
+  return tarefas.reduce((totalHoras, tarefa) => {
+    if (tarefa.prioridade === prioridade) {
+      return totalHoras + tarefa.horas;
+    }
+
+    return totalHoras;
+  }, 0);
+}
+```
+
+Durante essa prática, houve uma dificuldade inicial para interpretar:
+
+```javascript
+return totalHoras + tarefa.horas;
+```
+
+A execução foi analisada rodada por rodada.
+
+Foi consolidado que:
+
+```text
+totalHoras
+→ resultado acumulado até aquele momento.
+
+tarefa.horas
+→ valor da tarefa atual que será acrescentado.
+```
+
+Exemplo:
+
+```text
+0 + 3 = 3
+3 + 2 = 5
+```
+
+O resultado de uma rodada passa a ser o acumulador da rodada seguinte.
+
+### Evolução do raciocínio
+
+O estudo continua avançando da memorização de métodos para a construção de soluções reutilizáveis.
+
+A sequência de raciocínio praticada foi:
+
+```text
+Problema
+↓
+Regra de negócio
+↓
+Dados necessários
+↓
+Parâmetros
+↓
+Método adequado
+↓
+Implementação
+↓
+Validação do resultado
+```
+
+Esse processo aproxima os exercícios da forma como funções de um sistema real são projetadas.
+
+### Aplicação no TaskFlow
+
+As funções foram construídas utilizando o domínio de tarefas do TaskFlow, trabalhando com:
+
+- status;
+- prioridade;
+- títulos;
+- horas;
+- filtros;
+- transformações;
+- contagem;
+- acumulação.
+
+A prática reforçou que funções podem servir como uma camada de organização entre os dados do sistema e as regras que precisam ser executadas sobre esses dados.
+
+### Reflexão profissional
+
+A principal evolução desta etapa foi perceber que escrever uma função não significa apenas colocar código dentro de `function`.
+
+É necessário definir:
+
+- qual problema a função resolve;
+- quais dados ela precisa receber;
+- quais parâmetros representam esses dados;
+- qual resultado deve retornar;
+- como tornar seu comportamento reutilizável.
+
+O próximo passo será aumentar gradualmente a complexidade dessas funções, mantendo os métodos de array já estudados em prática constante.

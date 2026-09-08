@@ -71,3 +71,23 @@ const agruparTarefasPrioridade = tarefas3.reduce((acumulador, tarefa) => {
 }, {});
 
 console.log(agruparTarefasPrioridade);
+
+function calcularTotalDeHorasPorStatus(tarefas, status) {
+  return tarefas.reduce((acumulador, tarefa) => {
+    if (tarefa.status === status) {
+      return acumulador + tarefa.horas;
+    }
+    return acumulador;
+  }, 0);
+}
+
+const totalDeHorasConcluidas = calcularTotalDeHorasPorStatus(
+  tarefas2,
+  "concluida",
+);
+const totalDeHorasPendentes = calcularTotalDeHorasPorStatus(
+  tarefas2,
+  "pendente",
+);
+console.log(`Total de horas das tarefas concluídas: ${totalDeHorasConcluidas}`);
+console.log(`Total de horas das tarefas pendentes: ${totalDeHorasPendentes}`);
