@@ -82,12 +82,36 @@ function calcularTotalDeHorasPorStatus(tarefas, status) {
 }
 
 const totalDeHorasConcluidas = calcularTotalDeHorasPorStatus(
-  tarefas2,
+  tarefas3,
   "concluida",
 );
+
 const totalDeHorasPendentes = calcularTotalDeHorasPorStatus(
-  tarefas2,
+  tarefas3,
   "pendente",
 );
+
 console.log(`Total de horas das tarefas concluídas: ${totalDeHorasConcluidas}`);
 console.log(`Total de horas das tarefas pendentes: ${totalDeHorasPendentes}`);
+
+const tarefas4 = [
+  { titulo: "Criar API", status: "pendente", prioridade: "Alta", horas: 5 },
+  { titulo: "Criar Login", status: "concluida", prioridade: "Alta", horas: 3 },
+  { titulo: "Dashboard", status: "pendente", prioridade: "Baixa", horas: 4 },
+  { titulo: "Testes", status: "pendente", prioridade: "Alta", horas: 2 },
+  {
+    titulo: "Documentação",
+    status: "concluida",
+    prioridade: "Baixa",
+    horas: 2,
+  },
+];
+
+const somarHorasPendentesAlta = tarefas4.reduce((acumulador, tarefa) => {
+  if (tarefa.status === "pendente" && tarefa.prioridade === "Alta") {
+    return acumulador + tarefa.horas;
+  }
+  return acumulador;
+}, 0);
+
+console.log(somarHorasPendentesAlta);
