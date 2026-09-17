@@ -77,3 +77,42 @@ console.log(
   "Titulos de tarefas pendentes com alta prioridade:",
   obterTitulosTarefasPendentesAltas,
 );
+
+function obterTitulosTarefasPendentesAltaPrioridade(tarefas) {
+  return tarefas
+    .filter(
+      (tarefa) => tarefa.status === "pendente" && tarefa.prioridade === "Alta",
+    )
+    .map((tarefa) => tarefa.titulo);
+}
+
+const titulosPendentesAltaPrioridade =
+  obterTitulosTarefasPendentesAltaPrioridade(tarefas2);
+console.log(
+  "Titulos de tarefas pendentes com alta prioridade (função):",
+  titulosPendentesAltaPrioridade,
+);
+
+const tarefas3 = [
+  { titulo: "API", prioridade: "Alta", horas: 5 },
+  { titulo: "Login", prioridade: "Média", horas: 3 },
+  { titulo: "Testes", prioridade: "Alta", horas: 2 },
+  { titulo: "Docs", prioridade: "Baixa", horas: 4 },
+];
+
+function obterTituloDeTarefasPrioridadeAlta(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.prioridade === "Alta")
+    .map((tarefa) => tarefa.titulo);
+}
+
+const titulosPrioridadeAlta = obterTituloDeTarefasPrioridadeAlta(tarefas3);
+console.log(
+  "Titulos de tarefas com prioridade alta (função):",
+  titulosPrioridadeAlta,
+);
+
+const mensagem = titulosPrioridadeAlta.join(", ");
+
+document.getElementById("mensagem").textContent =
+  `Titulos de tarefas com prioridade alta (função): ${mensagem}`;

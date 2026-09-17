@@ -408,16 +408,10 @@ Foi praticada a utilização de funções que combinam métodos de array.
 Exemplo:
 
 ```javascript
-function obterTitulosPorStatusEPrioridade(
-  tarefas,
-  status,
-  prioridade,
-) {
+function obterTitulosPorStatusEPrioridade(tarefas, status, prioridade) {
   return tarefas
     .filter(
-      (tarefa) =>
-        tarefa.status === status &&
-        tarefa.prioridade === prioridade,
+      (tarefa) => tarefa.status === status && tarefa.prioridade === prioridade,
     )
     .map((tarefa) => tarefa.titulo);
 }
@@ -536,3 +530,24 @@ A principal evolução desta etapa foi perceber que escrever uma função não s
 - como tornar seu comportamento reutilizável.
 
 O próximo passo será aumentar gradualmente a complexidade dessas funções, mantendo os métodos de array já estudados em prática constante.
+
+## Data: 16/09/2026
+
+## Registro de Evolução — JavaScript
+
+### Consolidação de `filter()`, `map()` e `reduce()`
+
+Nesta etapa, o foco foi consolidar melhor o papel de cada método de array e, principalmente, aprender a explicar o motivo de cada escolha.
+
+Foi reforçado que:
+
+```text
+filter()
+→ seleciona elementos com base em uma condição.
+
+map()
+→ transforma os elementos e cria um novo array.
+
+reduce()
+→ acumula valores até produzir um único resultado.
+```

@@ -115,3 +115,42 @@ const somarHorasPendentesAlta = tarefas4.reduce((acumulador, tarefa) => {
 }, 0);
 
 console.log(somarHorasPendentesAlta);
+
+function obterTotalDeHorasPorTarefasPendentes(tarefas) {
+  return tarefas.reduce((acumulador, tarefa) => {
+    if (tarefa.status === "pendente") {
+      return acumulador + tarefa.horas;
+    }
+    return acumulador;
+  }, 0);
+}
+console.log(
+  `Total de horas das tarefas pendentes: ${obterTotalDeHorasPorTarefasPendentes(
+    tarefas4,
+  )}`,
+); // Saída: Total de horas das tarefas pendentes: 11
+
+function obterTotalDeHorasPorTarefasDeAltaPrioridade(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.prioridade === "Alta")
+    .reduce((acumulador, tarefa) => {
+      return acumulador + tarefa.horas;
+    }, 0);
+}
+
+const totalDeHorasAltaPrioridade =
+  obterTotalDeHorasPorTarefasDeAltaPrioridade(tarefas4);
+console.log(
+  `Total de horas das tarefas de alta prioridade: ${totalDeHorasAltaPrioridade}`,
+); // Saída: Total de horas das tarefas de alta prioridade: 10
+
+function obterTotalDeHorasPorTarefasNaoBaixas(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.prioridade !== "Baixa")
+    .reduce((acumulador, tarefa) => {
+      return acumulador + tarefa.horas;
+    }, 0);
+}
+
+const totalDeHorasNaoBaixas = obterTotalDeHorasPorTarefasNaoBaixas(tarefas4);
+console.log(`Total de horas das tarefas não baixas: ${totalDeHorasNaoBaixas}`); // Saída: Total de horas das tarefas não baixas: 10

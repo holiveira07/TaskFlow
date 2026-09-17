@@ -144,3 +144,25 @@ tarefas.sort((a, b) => {
 console.log(tarefas);
 tarefas.reverse();
 console.log(tarefas);
+
+const tarefas2 = [
+  { titulo: "Criar API", status: "pendente", prioridade: "Alta", horas: 5 },
+  { titulo: "Criar Login", status: "concluida", prioridade: "Alta", horas: 3 },
+  { titulo: "Dashboard", status: "pendente", prioridade: "Baixa", horas: 4 },
+  { titulo: "Testes", status: "pendente", prioridade: "Alta", horas: 2 },
+  {
+    titulo: "Documentação",
+    status: "concluida",
+    prioridade: "Baixa",
+    horas: 2,
+  },
+];
+
+function obterTitulosTarefasPendentesOrdenadasHorasMaiorMenor(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.status === "pendente")
+    .sort((a, b) => b.horas - a.horas)
+    .map((tarefa) => tarefa.titulo);
+}
+
+console.log(obterTitulosTarefasPendentesOrdenadasHorasMaiorMenor(tarefas2));

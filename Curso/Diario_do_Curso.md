@@ -870,9 +870,7 @@ Exemplo:
 
 ```javascript
 function obterTarefasPendentes(tarefas) {
-  return tarefas.filter(
-    (tarefa) => tarefa.status === "pendente",
-  );
+  return tarefas.filter((tarefa) => tarefa.status === "pendente");
 }
 ```
 
@@ -901,16 +899,10 @@ Foi praticada a utilização do operador `&&` dentro do `filter()` para represen
 Exemplo:
 
 ```javascript
-function obterTitulosPorStatusEPrioridade(
-  tarefas,
-  status,
-  prioridade,
-) {
+function obterTitulosPorStatusEPrioridade(tarefas, status, prioridade) {
   return tarefas
     .filter(
-      (tarefa) =>
-        tarefa.status === status &&
-        tarefa.prioridade === prioridade,
+      (tarefa) => tarefa.status === status && tarefa.prioridade === prioridade,
     )
     .map((tarefa) => tarefa.titulo);
 }
@@ -975,3 +967,137 @@ Os exercícios foram relacionados ao contexto de tarefas, utilizando regras como
 - Continuar a prática de funções reutilizáveis.
 - Integrar funções com `filter()`, `map()`, `reduce()` e outros métodos já estudados.
 - Começar a analisar o problema e escolher a operação adequada antes de implementar a função.
+
+## Data: 16/09/2026
+
+# Estudo de JavaScript — Consolidação de filter(), map() e reduce()
+
+### Conteúdo estudado
+
+Foi realizada uma revisão prática dos métodos `filter()`, `map()` e `reduce()`, com foco não apenas na sintaxe, mas também na escolha do método de acordo com a regra de negócio.
+
+Foi reforçado que:
+
+- `filter()` seleciona elementos com base em uma condição e retorna um novo array;
+- `map()` transforma os elementos e também retorna um novo array;
+- `reduce()` percorre o array acumulando valores até produzir um único resultado.
+
+### `reduce()` e valor inicial
+
+Foi revisado o papel do valor inicial do acumulador.
+
+Exemplo:
+
+```javascript
+const numeros = [2, 4, 6];
+
+const total = numeros.reduce((acumulador, numero) => {
+  return acumulador + numero;
+}, 10);
+
+Nesse caso, o acumulador começa em 10.
+A execução ocorre assim:
+10 + 2 = 12
+12 + 4 = 16
+16 + 6 = 22
+Também foi reforçado que, quando um valor inicial é informado, um array vazio não causa erro.
+Exemplo:
+[].reduce((acumulador, numero) => {
+  return acumulador + numero;
+}, 0);
+Resultado:
+0
+Combinação de filter() e reduce()
+Foi criada uma função para calcular o total de horas das tarefas de alta prioridade.
+function obterTotalDeHorasPorTarefasDeAltaPrioridade(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.prioridade === "Alta")
+    .reduce((acumulador, tarefa) => {
+      return acumulador + tarefa.horas;
+    }, 0);
+}
+Nesse fluxo:
+filter()
+↓
+seleciona as tarefas de prioridade alta
+↓
+reduce()
+↓
+soma as horas das tarefas selecionadas
+Regra de negócio
+Foi discutida a diferença entre:
+tarefa.prioridade === "Alta"
+e:
+tarefa.prioridade !== "Baixa"
+Apesar de, em determinados dados, os resultados poderem ser iguais, as regras de negócio são diferentes.
+A segunda regra é mais abrangente, pois também permite valores futuros como:
+Urgente
+Média
+Crítica
+Combinação de filter() e map()
+Foi criada uma função para obter somente os títulos das tarefas de prioridade alta.
+function obterTitulosDeTarefasPrioridadeAlta(tarefas) {
+  return tarefas
+    .filter((tarefa) => tarefa.prioridade === "Alta")
+    .map((tarefa) => tarefa.titulo);
+}
+O resultado produzido pelo filter() mantém os objetos completos.
+Exemplo:
+[
+  { titulo: "API", prioridade: "Alta", horas: 5 },
+  { titulo: "Testes", prioridade: "Alta", horas: 2 }
+]
+Após o map():
+["API", "Testes"]
+Foi consolidada a diferença:
+filter()
+→ seleciona
+
+map()
+→ transforma
+Formatação para exibição
+Foi utilizado o método join() para transformar o array de títulos em uma string adequada para exibição.
+Exemplo:
+const mensagem = titulosPrioridadeAlta.join(", ");
+Também foi feita uma renderização simples no HTML utilizando:
+document.getElementById("mensagem").textContent =
+  `Títulos de tarefas com prioridade alta: ${mensagem}`;
+Foi reforçado que textContent é adequado quando o objetivo é inserir somente texto, sem necessidade de interpretar HTML.
+Separação de responsabilidades
+Foi discutida a importância de manter diferentes etapas com responsabilidades claras.
+Exemplo:
+filter()
+→ seleção
+
+map()
+→ transformação
+
+join()
+→ formatação para apresentação
+
+textContent
+→ exibição na interface
+Essa separação facilita a leitura, a manutenção e a explicação do código.
+Explicação técnica
+Além da implementação, foi iniciada uma nova prática: explicar o código como em uma entrevista técnica.
+Foram treinadas perguntas como:
+- por que utilizar filter() antes de map()?
+- por que utilizar filter() junto com reduce()?
+- qual a diferença entre filter() e map()?
+- qual o papel do valor inicial do reduce()?
+- por que duas regras diferentes podem gerar o mesmo resultado?
+Aplicação no TaskFlow
+Os exercícios continuaram utilizando o domínio do TaskFlow, trabalhando com:
+- prioridade;
+- horas;
+- títulos;
+- seleção de tarefas;
+- transformação de dados;
+- acumulação;
+- exibição de resultados no HTML.
+Próximo conteúdo
+- Continuar a prática de map().
+- Criar novos objetos a partir de objetos existentes.
+- Combinar título e horas em novos arrays.
+- Continuar o treino de explicação técnica das soluções.
+```
