@@ -551,3 +551,54 @@ map()
 reduce()
 → acumula valores até produzir um único resultado.
 ```
+
+## Data: 26–27/10/2026
+
+## Registro de Evolução — Revisão de métodos JavaScript
+
+### Retomada prática de `map()`, `filter()`, `find()`, `some()` e `every()`
+
+Nesta etapa, foram realizados exercícios práticos de revisão utilizando tarefas do TaskFlow e objetos de usuários.
+
+O objetivo foi recuperar os conhecimentos já estudados, identificar dificuldades pontuais e preparar a continuidade do curso sem prolongar revisões desnecessárias.
+
+### Conhecimentos demonstrados
+
+- Utilização de `map()` para transformar objetos e produzir um novo array.
+- Criação de propriedades booleanas a partir de condições avaliadas individualmente para cada objeto.
+- Utilização de `filter()` para selecionar tarefas que atendem a uma condição.
+- Utilização de `find()` para retornar o primeiro objeto correspondente.
+- Utilização de `some()` para verificar se pelo menos um elemento atende a uma condição.
+- Utilização de `every()` para verificar se todos os elementos atendem a uma condição.
+- Criação de funções reutilizáveis para receber arrays como parâmetros.
+- Utilização de funções tradicionais e arrow functions.
+
+### Pontos de atenção
+
+Durante o exercício com `every()`, foram identificadas duas dificuldades pontuais:
+
+- esquecer de passar o array como argumento na chamada da função;
+- comparar strings com diferenças entre letras maiúsculas e minúsculas.
+
+Esses pontos devem ser reforçados durante a prática, sem necessidade de repetir integralmente os conteúdos já estudados.
+
+### Evolução da estratégia de aprendizagem
+
+Foi estabelecido que as revisões dos principais métodos de JavaScript devem ser objetivas e ter um limite claro.
+
+A estratégia acordada é:
+
+- realizar um exercício curto por método;
+- avançar quando a solução estiver correta;
+- corrigir especificamente o ponto que apresentar dificuldade;
+- concluir a rodada de revisões;
+- priorizar o avanço para conteúdos novos;
+- utilizar revisões integradas posteriormente para consolidar o conhecimento.
+
+O objetivo de longo prazo permanece o domínio progressivo de JavaScript para desenvolvimento Front-end e Back-end, incluindo aplicações CRUD e sistemas mais avançados.
+
+### Próxima etapa
+
+Concluir a validação de `every()`, revisar `includes()` com um exercício curto e continuar a rodada de revisão dos métodos principais.
+
+Após essa etapa, avançar para conteúdos novos conforme a sequência registrada no Diário do Curso.

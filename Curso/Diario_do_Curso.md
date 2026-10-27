@@ -1101,3 +1101,64 @@ Próximo conteúdo
 - Combinar título e horas em novos arrays.
 - Continuar o treino de explicação técnica das soluções.
 ```
+
+## Data: 26–27/10/2026
+
+## Revisão prática dos métodos de array
+
+### `map()` — transformação de objetos
+
+Foi retomada a transformação de arrays de objetos com `map()`.
+
+Práticas realizadas:
+
+- percorrer objetos individualmente;
+- calcular uma propriedade booleana a partir de cada objeto;
+- criar novos objetos com propriedades selecionadas;
+- retornar um array de objetos transformados;
+- utilizar funções declaradas e arrow functions.
+
+Foi verificado que o resultado do `map()` depende do valor retornado pelo callback. A transformação de cada usuário produziu sua própria propriedade `ehMaiorDeIdade`, incluindo `true` para adultos e `false` para uma pessoa de 17 anos.
+
+### `filter()` — seleção de tarefas
+
+Foi realizado um exercício para selecionar tarefas com status `"Pendente"`, preservando os objetos completos.
+
+A solução utilizou `filter()` com uma condição de igualdade estrita.
+
+### `find()` — localização do primeiro elemento
+
+Foi realizado um exercício para localizar a primeira tarefa pendente. A solução utilizou `find()` e retornou o primeiro objeto correspondente, em vez de um array de resultados.
+
+### `some()` — verificação de existência
+
+Foi praticada a verificação da existência de pelo menos uma tarefa concluída. O resultado esperado e obtido foi `true`.
+
+### `every()` — verificação de todos os elementos
+
+Foi iniciado um exercício para verificar se todas as tarefas estavam pendentes.
+
+Pontos de atenção identificados:
+
+- passar o array `tarefas` como argumento ao chamar a função;
+- respeitar a diferença entre letras maiúsculas e minúsculas em comparações de strings;
+- utilizar `"Pendente"` exatamente como aparece nos dados.
+
+A última versão apresentada ainda utilizava `"pendente"` na comparação. É necessário confirmar a correção antes de considerar esse exercício concluído.
+
+### Organização das revisões
+
+Foi definida uma estratégia para evitar revisões repetitivas e permitir o avanço do curso:
+
+- fazer um exercício curto por método;
+- se a solução estiver correta, seguir para o próximo método;
+- corrigir somente a dificuldade identificada quando houver erro;
+- concluir a rodada de revisões dos principais métodos;
+- avançar para novos conteúdos, mantendo revisões integradas em momentos apropriados.
+
+### Próximo passo
+
+1. Concluir a validação de `every()`.
+2. Revisar `includes()` com um exercício curto.
+3. Prosseguir pelos métodos ainda pendentes na rodada de revisão.
+4. Avançar para conteúdos novos depois de concluir essa etapa.
