@@ -602,3 +602,33 @@ O objetivo de longo prazo permanece o domínio progressivo de JavaScript para de
 Concluir a validação de `every()`, revisar `includes()` com um exercício curto e continuar a rodada de revisão dos métodos principais.
 
 Após essa etapa, avançar para conteúdos novos conforme a sequência registrada no Diário do Curso.
+
+## Data: 27/10/2026
+
+## Evolução prática — ordenação, verificação e acumulação
+
+Nesta etapa, foram integrados métodos de array e estruturas de controle em exercícios com tarefas do TaskFlow.
+
+### Competências praticadas
+
+- Ordenar tarefas por quantidade de horas com `sort()`.
+- Preservar o array original utilizando a sintaxe spread.
+- Percorrer objetos com `for...of`.
+- Utilizar `const` como variável de iteração.
+- Aplicar `if` para verificar individualmente a carga horária de cada tarefa.
+- Utilizar template literals para gerar mensagens dinâmicas.
+- Somar horas de tarefas com `reduce()`, retornando corretamente o acumulador.
+
+### Aprendizado importante
+
+Foi esclarecido que a verificação individual de cada tarefa é diferente da soma de todas as horas. Para identificar qual tarefa ultrapassa o limite, é necessário acessar `tarefa.horas` durante a iteração.
+
+Também foi estudado como o `for...of` inicializa a variável de iteração para cada elemento, sem exigir a reatribuição manual de uma constante.
+
+### Resultado
+
+A ordenação e a identificação individual de tarefas acima de três horas funcionaram corretamente. O exercício de `reduce()` retornou o total de dez horas.
+
+### Próxima etapa
+
+Concluir o registro desta revisão e avançar para o próximo conteúdo do curso, evitando repetições desnecessárias.

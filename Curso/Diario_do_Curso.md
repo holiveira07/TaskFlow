@@ -1162,3 +1162,44 @@ Foi definida uma estratégia para evitar revisões repetitivas e permitir o avan
 2. Revisar `includes()` com um exercício curto.
 3. Prosseguir pelos métodos ainda pendentes na rodada de revisão.
 4. Avançar para conteúdos novos depois de concluir essa etapa.
+
+## Data: 27/10/2026
+
+## Revisão de métodos JavaScript e estruturas de controle
+
+### `sort()` — ordenação de tarefas
+
+Foi implementada a ordenação crescente das tarefas pela propriedade `horas`, utilizando `sort()` e o comparador `a.horas - b.horas`.
+
+Foi utilizada a sintaxe `[...tarefas]` para criar uma cópia do array antes da ordenação, preservando o array original.
+
+### Verificação individual da carga horária
+
+Foi criada uma verificação fora da função de ordenação para identificar individualmente as tarefas que excedem o limite de horas recomendado.
+
+Conceitos praticados:
+
+- `for...of` para percorrer um array;
+- `const` para declarar a variável que representa o elemento atual;
+- `if` para verificar a condição `tarefa.horas > 3`;
+- template literals para exibir o título da tarefa na mensagem.
+
+Foi esclarecida a diferença entre percorrer um array de objetos e somar os valores de todos os objetos.
+
+### `reduce()` — acumulação de valores
+
+Foi realizado um exercício para somar as horas de todas as tarefas.
+
+A solução utilizou `reduce()`, um acumulador inicializado com `0` e o retorno `contador + tarefa.horas`.
+
+O resultado obtido foi `10` horas.
+
+### Conclusão da rodada de revisão
+
+Foram revisados os métodos `map()`, `filter()`, `find()`, `some()`, `every()`, `includes()`, `sort()` e `reduce()`.
+
+A prática também reforçou `for...of`, `if`, acesso às propriedades de objetos, comparação numérica e organização das responsabilidades do código.
+
+### Próxima etapa
+
+Avançar para conteúdo novo conforme a sequência do curso, mantendo revisões pontuais e atualizando os diários a cada etapa relevante.
