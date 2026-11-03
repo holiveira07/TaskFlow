@@ -632,3 +632,75 @@ A ordenação e a identificação individual de tarefas acima de três horas fun
 ### Próxima etapa
 
 Concluir o registro desta revisão e avançar para o próximo conteúdo do curso, evitando repetições desnecessárias.
+
+### Competência desenvolvida — Transformação de objetos e regras de acesso
+
+Pratiquei a transformação de objetos com `map()`, criando propriedades calculadas com base nos dados de cada usuário.
+
+Consolidei os seguintes conceitos:
+
+- Callback executado individualmente para cada elemento.
+- Operador lógico `&&` para combinar condições.
+- Operador spread (`...`) para copiar propriedades de objetos.
+- Diferença entre uma conta ativa e a autorização para acessar um sistema.
+- Importância de utilizar nomes de propriedades que representem claramente cada informação.
+
+Exercício aplicado: determinar se usuários podem acessar um sistema considerando maioridade e estado ativo da conta.
+
+### Competência desenvolvida — Encadeamento de métodos de array
+
+Consegui implementar de forma independente uma função que combina `filter()` e `map()`.
+
+Demonstrei compreensão de:
+
+- Seleção de elementos com `filter()`.
+- Transformação de elementos com `map()`.
+- Encadeamento de métodos.
+- Retorno de novos objetos.
+- Preservação de propriedades com spread.
+- Cálculos derivados dos dados de cada objeto.
+
+Evolução: passei a combinar métodos de array para resolver um problema prático sem depender de uma solução pronta.
+
+# Redirecionamento profissional — Novembro de 2026
+
+## Objetivo
+
+Preparar-me para competir por uma vaga de Desenvolvedor Front-End Júnior até 30 de junho de 2027, antes da conclusão da graduação em Engenharia de Software, prevista para o final de 2027.
+
+## Estratégia
+
+O plano de desenvolvimento foi reorganizado para priorizar as competências exigidas no desenvolvimento Front-End moderno.
+
+A estratégia consiste em consolidar os fundamentos de JavaScript, avançar para TypeScript e React e, posteriormente, desenvolver aplicações com integração de APIs, testes automatizados, acessibilidade e boas práticas de engenharia de software.
+
+## Projeto principal
+
+O TaskFlow continuará sendo o projeto central de aplicação dos conhecimentos.
+
+A implementação de sua versão profissional acontecerá progressivamente, respeitando a sequência de aprendizagem e evitando antecipar tecnologias ainda não estudadas.
+
+## Disponibilidade de estudo
+
+Dedicação prevista: entre 1 hora e 1 hora e 30 minutos por dia.
+
+## Compromisso
+
+Priorizar consistência, prática, compreensão dos fundamentos e construção de portfólio.
+
+O objetivo não é apenas concluir um curso, mas desenvolver competências demonstráveis em projetos e estar preparado para processos seletivos de Desenvolvedor Front-End Júnior.
+
+### Competência desenvolvida — Acumulação de dados com reduce()
+
+Implementei uma solução utilizando `reduce()` para gerar um resumo de tarefas.
+
+Demonstrei capacidade de:
+
+- Construir objetos a partir de arrays.
+- Trabalhar com acumuladores contendo múltiplas propriedades.
+- Contabilizar elementos de acordo com condições.
+- Somar valores específicos dos objetos.
+- Identificar erros de execução e corrigir a ausência de retorno do acumulador.
+- Validar o comportamento do código utilizando Node.js.
+
+Evolução: compreendi a diferença entre incrementar um contador (`++`) e acumular valores variáveis (`+=`).

@@ -1203,3 +1203,69 @@ A prática também reforçou `for...of`, `if`, acesso às propriedades de objeto
 ### Próxima etapa
 
 Avançar para conteúdo novo conforme a sequência do curso, mantendo revisões pontuais e atualizando os diários a cada etapa relevante.
+
+### JavaScript — Transformação de objetos com map()
+
+- Pratiquei o uso de `map()` para transformar objetos de um array de usuários.
+- Aprendi a calcular propriedades individualmente dentro do callback do `map()`.
+- Utilizei o operador `&&` para combinar condições de acesso.
+- Aprendi a utilizar `...usuario` para preservar as propriedades originais ao retornar um novo objeto.
+- Diferenciei o estado da conta (`ativo`) da permissão de acesso (`podeAcessarOSistema`).
+- Entendi que o objeto retornado pelo `map()` contém as propriedades explicitamente retornadas ou copiadas, e não recebe automaticamente todas as propriedades do objeto original.
+
+### JavaScript — Encadeamento de filter() e map()
+
+- Aprendi a encadear `filter()` e `map()` em uma única operação.
+- Utilizei `filter()` para selecionar tarefas com status "Pendente".
+- Utilizei `map()` para transformar as tarefas selecionadas.
+- Calculei minutos a partir das horas de cada tarefa.
+- Utilizei o spread (`...tarefa`) para preservar as propriedades originais.
+- Desenvolvi o exercício de forma independente, sem consultar uma solução pronta.
+
+# Atualização do planejamento do curso — Novembro de 2026
+
+## Nova direção do curso
+
+O planejamento do curso foi reorganizado para direcionar os estudos à preparação profissional para uma vaga de Desenvolvedor Front-End Júnior até 30/06/2027.
+
+O projeto TaskFlow continuará sendo nosso projeto principal, mas sua construção profissional será realizada no momento adequado, após a consolidação dos fundamentos necessários.
+
+### Tecnologias e conteúdos previstos
+
+1. JavaScript moderno e aprofundamento da linguagem.
+2. DOM, eventos e APIs do navegador.
+3. Programação assíncrona, Fetch API e consumo de APIs REST.
+4. TypeScript.
+5. Vite, NPM e ferramentas de desenvolvimento.
+6. React.
+7. React Router e gerenciamento de estado e dados.
+8. Testes com Vitest, React Testing Library e Playwright.
+9. Acessibilidade, performance e segurança.
+10. Git, GitHub, integração contínua e deploy.
+
+### Metodologia
+
+- Estudo sequencial, sem antecipar etapas.
+- Exercícios práticos antes da implementação de funcionalidades maiores.
+- Escrita manual do código pelo estudante.
+- Análise de erros e depuração.
+- Aplicação gradual dos conhecimentos no TaskFlow.
+- Revisão e documentação dos aprendizados.
+
+O React será o principal framework de desenvolvimento estudado. O objetivo não é aprender várias ferramentas superficialmente, mas desenvolver domínio prático de uma stack profissional.
+
+### JavaScript — Reduce com acumulador objeto
+
+- Utilizei `reduce()` para construir um objeto de resumo a partir de um array de tarefas.
+- Inicializei o acumulador com múltiplas propriedades.
+- Implementei contadores para tarefas totais, pendentes e concluídas.
+- Utilizei `++` para incrementar a quantidade de tarefas.
+- Utilize `+=` para acumular as horas das tarefas pendentes.
+- Apliquei condicionais para atualizar propriedades específicas do acumulador.
+- Reforcei a importância de retornar o acumulador em cada iteração.
+- Identifiquei e corrigi um erro causado pela ausência de `return`.
+
+Exercício prático: construção de um resumo do TaskFlow com total de tarefas, pendentes, concluídas e horas pendentes.
+
+Resultado validado com Node.js:
+{ total: 5, pendentes: 3, concluídas: 2, horasPendentes: 9 }
