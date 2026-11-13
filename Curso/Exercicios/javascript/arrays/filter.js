@@ -116,3 +116,15 @@ const mensagem = titulosPrioridadeAlta.join(", ");
 
 document.getElementById("mensagem").textContent =
   `Titulos de tarefas com prioridade alta (função): ${mensagem}`;
+
+const tarefas4 = [
+  { titulo: "Criar API", status: "pendente", prioridade: "Alta", horas: 5 },
+  { titulo: "Dashboard", status: "concluida", prioridade: "Baixa", horas: 4 },
+  { titulo: "Testes", status: "pendente", prioridade: "Alta", horas: 2 },
+];
+
+const tituloTarefasPendentesHoras = tarefas4
+  .filter((tarefa) => tarefa.status === "pendente")
+  .map((tarefa) => ({ titulo: tarefa.titulo, horas: tarefa.horas }));
+
+console.log(tituloTarefasPendentesHoras);
