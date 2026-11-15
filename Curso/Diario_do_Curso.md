@@ -1269,3 +1269,18 @@ Exercício prático: construção de um resumo do TaskFlow com total de tarefas,
 
 Resultado validado com Node.js:
 { total: 5, pendentes: 3, concluídas: 2, horasPendentes: 9 }
+
+### JavaScript — Destructuring, rest e spread
+
+- Pratiquei destructuring para extrair propriedades de objetos e objetos aninhados.
+- Utilizei renomeação de propriedades e valores padrão.
+- Pratiquei rest em arrays, parâmetros de funções e objetos.
+- Utilizei spread para copiar e combinar objetos e arrays.
+- Revisei a diferença entre cópia rasa e cópia de objetos aninhados.
+
+### JavaScript — Integração de filter() e map()
+
+- Selecionei tarefas com `filter()` usando condições de status.
+- Transformei os resultados com `map()` em novos objetos.
+- Preservei propriedades com o spread (`...tarefa`).
+- Calculei novas informações, como minutos a partir das horas.

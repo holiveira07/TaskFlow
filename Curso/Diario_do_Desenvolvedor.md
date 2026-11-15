@@ -704,3 +704,17 @@ Demonstrei capacidade de:
 - Validar o comportamento do código utilizando Node.js.
 
 Evolução: compreendi a diferença entre incrementar um contador (`++`) e acumular valores variáveis (`+=`).
+
+## Competência desenvolvida — Destructuring, rest, spread, filter e map
+
+Pratiquei recursos modernos do JavaScript para extrair, copiar e transformar dados.
+
+- Utilizei destructuring para extrair propriedades de objetos e objetos aninhados.
+- Apliquei renomeação de propriedades e valores padrão durante a desestruturação.
+- Utilizei rest em arrays, parâmetros de funções e objetos para reunir os valores restantes.
+- Utilizei spread para criar cópias e novos objetos e arrays a partir de dados existentes.
+- Diferenciei cópia rasa de uma cópia que também recria objetos aninhados.
+- Combinei `filter()` e `map()` para selecionar tarefas e transformá-las em novos objetos.
+- Preservei propriedades existentes com `...tarefa` ao adicionar informações calculadas.
+
+Evolução: passei a escolher entre destructuring, rest, spread, `filter()` e `map()` conforme a transformação necessária nos dados.
