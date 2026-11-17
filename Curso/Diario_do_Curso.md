@@ -1284,3 +1284,41 @@ Resultado validado com Node.js:
 - Transformei os resultados com `map()` em novos objetos.
 - Preservei propriedades com o spread (`...tarefa`).
 - Calculei novas informações, como minutos a partir das horas.
+
+## Data: 17/11/2026
+
+# JavaScript — Spread, map() e atualização imutável de objetos
+
+### Conteúdo estudado
+
+Foi realizada uma prática de consolidação envolvendo `map()`, spread operator e atualização imutável de objetos dentro de arrays.
+
+### Conceitos praticados
+
+- Utilização de `map()` para percorrer arrays e produzir um novo array.
+- Utilização de `if` para identificar um objeto específico pelo seu `id`.
+- Utilização de `...tarefa` para preservar as propriedades existentes ao criar um novo objeto.
+- Atualização de propriedades após a cópia, compreendendo a importância da ordem do spread.
+- Utilização de spread aninhado para criar uma nova cópia de objetos internos.
+- Importância de retornar um resultado em todos os caminhos do callback do `map()`.
+
+### Exercício prático
+
+Foi implementada a atualização de uma tarefa específica, alterando seu status para `"Concluída"` e seu responsável para `"Henrique"`.
+
+```javascript
+const tarefas1Atualizadas = tarefas1.map((tarefa) => {
+  if (tarefa.id === 2) {
+    return {
+      ...tarefa,
+      status: "Concluída",
+      responsavel: {
+        ...tarefa.responsavel,
+        nome: "Henrique",
+      },
+    };
+  }
+
+  return tarefa;
+});
+```

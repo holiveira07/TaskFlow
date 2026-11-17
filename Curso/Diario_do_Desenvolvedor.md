@@ -718,3 +718,42 @@ Pratiquei recursos modernos do JavaScript para extrair, copiar e transformar dad
 - Preservei propriedades existentes com `...tarefa` ao adicionar informações calculadas.
 
 Evolução: passei a escolher entre destructuring, rest, spread, `filter()` e `map()` conforme a transformação necessária nos dados.
+
+## Data: 17/11/2026
+
+## Evolução prática — Atualização imutável de objetos
+
+Nesta etapa, avancei na aplicação de JavaScript moderno utilizando `map()` e spread operator para atualizar objetos dentro de arrays.
+
+### Competências praticadas
+
+- Identificação de elementos por meio de uma propriedade `id`.
+- Criação de novos arrays utilizando `map()`.
+- Atualização de propriedades sem modificar os objetos originais.
+- Cópia de objetos com spread operator.
+- Cópia de objetos aninhados utilizando spread dentro de spread.
+- Utilização de retornos condicionais dentro do callback do `map()`.
+
+### Dificuldades e evolução
+
+Durante o exercício, inicialmente houve dificuldade em organizar os retornos e estruturar corretamente o novo objeto.
+
+Foi identificado que a ausência de `return` para os elementos que não atendiam à condição fazia com que o resultado apresentasse valores `undefined`.
+
+Após a correção, consegui construir a solução com orientação, preservando as propriedades originais e atualizando somente a tarefa desejada.
+
+### Validação do resultado
+
+Comparei o objeto original com o atualizado e confirmei que o responsável original permaneceu como `"Carlos"`, enquanto a nova versão passou a apresentar `"Henrique"`.
+
+### Reflexão profissional
+
+O exercício reforçou que criar um novo array não significa necessariamente criar cópias independentes de todos os objetos.
+
+Também compreendi melhor a importância de identificar referências compartilhadas, especialmente quando trabalhamos com objetos aninhados.
+
+Essa compreensão será importante na próxima etapa do curso, principalmente no gerenciamento de estado com React.
+
+### Próximo passo
+
+Continuar a consolidação de JavaScript moderno e avançar para os próximos conteúdos da sequência do curso, aplicando os conceitos no TaskFlow.
